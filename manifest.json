@@ -1,10 +1,10 @@
 {
-  "name": "M\u00f3dulo 4 - Observaci\u00f3n Energ\u00e9tica",
-  "short_name": "M\u00f3dulo 4",
-  "start_url": "./",
+  "name": "Encuesta Energética - Módulo 2",
+  "short_name": "Modulo2",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#008751",
+  "theme_color": "#0b6121",
   "icons": [
     {
       "src": "icon-192.png",

@@ -15,49 +15,7 @@
     <h1>Módulo 4: Observación de Zonas Comunes y Unidades Productivas</h1>
     <form id="form-zonas">
 
-      
-      <p><strong>1. ¿Qué tipo de carga va a registrar?</strong><br><em>Tipo de pregunta: Selección única</em></p>
-      <select name="categoria" required>
-        <option value="">Seleccione...</option>
-        <option>Iluminación</option>
-        <option>Refrigeración</option>
-        <option>Cocina</option>
-        <option>Comunicaciones</option>
-        <option>Ventilación</option>
-        <option>Producción</option>
-        <option>Computación</option>
-        <option>Bombeo / hidráulica</option>
-        <option>Otro</option>
-      </select>
-
-      <p><strong>2. Identifique la carga a inventariar.</strong><br><em>Tipo de pregunta: Selección única</em></p>
-      <select name="tipo" required><option value="">Seleccione una categoría primero</option></select>
-
-      <p><strong>3. Cantidad de equipos iguales</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
-      <input type="number" name="cantidad" required>
-
-      <p><strong>4. Horas promedio de uso diario</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
-      <input type="number" name="horas_dia" required>
-
-      <p><strong>5. Días de uso al mes</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
-      <input type="number" name="dias_mes" required>
-
-      <p><strong>6. Potencia estimada (W)</strong><br><em>Tipo de pregunta: Respuesta abierta</em></p>
-      <input type="number" name="potencia_w" required>
-
-      <p><strong>7. Estado físico del equipo</strong><br><em>Tipo de pregunta: Selección múltiple</em></p>
-      <label><input type="checkbox" name="estado" value="En buen estado"> En buen estado</label><br>
-      <label><input type="checkbox" name="estado" value="Deteriorado"> Deteriorado</label><br>
-      <label><input type="checkbox" name="estado" value="Inseguro"> Inseguro</label><br>
-      <label><input type="checkbox" name="estado" value="Otro"> Otro</label>
-
-      <p><strong>8. ¿Desea registrar otra carga?</strong><br><em>Tipo de pregunta: Selección única</em></p>
-      <label><input type="radio" name="otra" value="Sí" required> Sí</label>
-      <label><input type="radio" name="otra" value="No"> No</label>
-
-
-    
-      <p><strong>9. ¿Qué tipo de espacio es?</strong><br><em>Tipo de pregunta: Selección única</em></p>
+      <p><strong>1. Tipo de espacio observado</strong> (selección única)</p>
       <select name="tipo_espacio" required>
         <option value="">Seleccione...</option>
         <option>Zona común</option>
@@ -65,45 +23,80 @@
         <option>Otro</option>
       </select>
 
-      <p><strong>10. Nombre o descripción del espacio observado</strong><br><em>Tipo de pregunta: Texto corto</em></p>
+      <p><strong>2. Nombre del espacio</strong></p>
       <input type="text" name="nombre_espacio" required>
 
-      <p><strong>11. ¿Cuál es el estado físico general del espacio?</strong><br><em>Tipo de pregunta: Selección múltiple</em></p>
-      <label><input type="checkbox" name="estado_espacio" value="Bueno"> Bueno</label><br>
-      <label><input type="checkbox" name="estado_espacio" value="Regular"> Regular</label><br>
-      <label><input type="checkbox" name="estado_espacio" value="Malo"> Malo</label><br>
+      <p><strong>3. Ubicación o punto de referencia</strong></p>
+      <input type="text" name="ubicacion" required>
 
-      <p><strong>12. ¿Qué condiciones energéticas observa?</strong><br><em>Tipo de pregunta: Selección múltiple</em></p>
-      <label><input type="checkbox" name="condiciones" value="Conexiones expuestas"> Conexiones expuestas</label><br>
-      <label><input type="checkbox" name="condiciones" value="Sobrecarga de tomas"> Sobrecarga de tomas</label><br>
-      <label><input type="checkbox" name="condiciones" value="Uso de extensiones"> Uso de extensiones</label><br>
-      <label><input type="checkbox" name="condiciones" value="Iluminación deficiente"> Iluminación deficiente</label><br>
+      <p><strong>4. ¿Está en funcionamiento?</strong></p>
+      <label><input type="radio" name="funcionamiento" value="Sí" required> Sí</label>
+      <label><input type="radio" name="funcionamiento" value="No"> No</label>
 
-      <p><strong>13. ¿Cuál es la cantidad aproximada de estos residuos por semana o mes?</strong><br><em>Tipo de pregunta: Campo de texto (kg, m³, sacos, etc.)</em></p>
-      <input type="text" name="cantidad_residuos" required>
+      <p><strong>5. Estado físico de la infraestructura</strong></p>
+      <label><input type="radio" name="estado_infraestructura" value="Bueno" required> Bueno</label>
+      <label><input type="radio" name="estado_infraestructura" value="Regular"> Regular</label>
+      <label><input type="radio" name="estado_infraestructura" value="Malo"> Malo</label>
 
-      <p><strong>14. ¿Qué uso actual se le da a esos residuos?</strong><br><em>Tipo de pregunta: Selección múltiple</em></p>
-      <label><input type="checkbox" name="uso_residuos" value="Se desechan"> Se desechan</label><br>
-      <label><input type="checkbox" name="uso_residuos" value="Se compostan"> Se compostan</label><br>
-      <label><input type="checkbox" name="uso_residuos" value="Se utilizan para alimentar animales"> Se utilizan para alimentar animales</label><br>
+      <p><strong>6. ¿Cuenta con energía eléctrica?</strong></p>
+      <label><input type="radio" name="energia_electrica" value="Sí" required> Sí</label>
+      <label><input type="radio" name="energia_electrica" value="No"> No</label>
+
+      <p><strong>7. Tipo de instalación eléctrica</strong></p>
+      <select name="tipo_instalacion">
+        <option value="">Seleccione...</option>
+        <option>Aérea</option>
+        <option>Subterránea</option>
+        <option>Mixta</option>
+        <option>No aplica</option>
+      </select>
+
+      <p><strong>8. Equipos eléctricos presentes</strong> (selección múltiple)</p>
+      <label><input type="checkbox" name="equipos_presentes" value="Iluminación"> Iluminación</label><br>
+      <label><input type="checkbox" name="equipos_presentes" value="Refrigeración"> Refrigeración</label><br>
+      <label><input type="checkbox" name="equipos_presentes" value="Cocina"> Cocina</label><br>
+      <label><input type="checkbox" name="equipos_presentes" value="Ventilación"> Ventilación</label><br>
+      <label><input type="checkbox" name="equipos_presentes" value="Otro"> Otro</label>
+
+      <p><strong>9. Uso principal del espacio</strong></p>
+      <input type="text" name="uso_espacio" required>
+
+      <p><strong>10. Necesidades prioritarias</strong> (selección múltiple)</p>
+      <label><input type="checkbox" name="necesidades" value="Iluminación"> Iluminación</label><br>
+      <label><input type="checkbox" name="necesidades" value="Equipos productivos"> Equipos productivos</label><br>
+      <label><input type="checkbox" name="necesidades" value="Refrigeración"> Refrigeración</label><br>
+      <label><input type="checkbox" name="necesidades" value="Otro"> Otro</label>
+
+      <p><strong>11. ¿Se generan residuos orgánicos o biomasa?</strong> (selección múltiple)</p>
+      <label><input type="checkbox" name="residuos_generados" value="Sí"> Sí</label><br>
+      <label><input type="checkbox" name="residuos_generados" value="No"> No</label><br>
+      <label><input type="checkbox" name="residuos_generados" value="No se observó"> No se observó</label><br>
+
+      <p><strong>12. Cantidad aproximada de residuos</strong></p>
+      <input type="text" name="cantidad_residuos">
+
+      <p><strong>13. Uso actual de residuos</strong> (selección múltiple)</p>
+      <label><input type="checkbox" name="uso_residuos" value="Desechan"> Desechan</label><br>
+      <label><input type="checkbox" name="uso_residuos" value="Compostan"> Compostan</label><br>
+      <label><input type="checkbox" name="uso_residuos" value="Alimentan animales"> Alimentan animales</label><br>
       <label><input type="checkbox" name="uso_residuos" value="Se queman"> Se queman</label><br>
       <label><input type="checkbox" name="uso_residuos" value="Otro"> Otro</label>
 
-      <p><strong>15. ¿Existe infraestructura disponible con techos aptos para instalación de paneles solares?</strong><br><em>Tipo de pregunta: Selección única</em></p>
-      <label><input type="radio" name="infraestructura_techos" value="Sí" required> Sí</label><br>
-      <label><input type="radio" name="infraestructura_techos" value="No"> No</label><br>
-      <label><input type="radio" name="infraestructura_techos" value="Parcialmente"> Parcialmente</label><br>
+      <p><strong>14. ¿Hay techos aptos para paneles solares?</strong></p>
+      <label><input type="radio" name="paneles_solares" value="Sí" required> Sí</label>
+      <label><input type="radio" name="paneles_solares" value="No"> No</label>
+      <label><input type="radio" name="paneles_solares" value="Parcialmente"> Parcialmente</label>
 
-      <p><strong>16. Área estimada de techo disponible (m²):</strong></p>
-      <input type="text" name="area_techo" required>
+      <p><strong>15. Área de techo disponible (m²)</strong></p>
+      <input type="text" name="area_techo">
 
-      <p><strong>17. ¿La zona recibe buena radiación solar directa al menos 5 horas al día?</strong><br><em>Tipo de pregunta: Selección única</em></p>
-      <label><input type="radio" name="radiacion_solar" value="Sí" required> Sí</label><br>
-      <label><input type="radio" name="radiacion_solar" value="No"> No</label><br>
-      <label><input type="radio" name="radiacion_solar" value="No se pudo verificar"> No se pudo verificar</label><br>
+      <p><strong>16. ¿Recibe radiación solar directa ≥ 5 horas/día?</strong></p>
+      <label><input type="radio" name="radiacion" value="Sí" required> Sí</label>
+      <label><input type="radio" name="radiacion" value="No"> No</label>
+      <label><input type="radio" name="radiacion" value="No se pudo verificar"> No se pudo verificar</label>
 
-      <p><strong>18. Observaciones adicionales sobre potencial energético en el espacio observado:</strong><br><em>Tipo de pregunta: Respuesta abierta larga</em></p>
-      <textarea name="observaciones_energia" rows="4" cols="50" placeholder="Escriba aquí..."></textarea>
+      <p><strong>17. Observaciones sobre potencial energético</strong></p>
+      <textarea name="observaciones" rows="4" cols="50" placeholder="Escriba aquí..."></textarea>
 
     </form>
     <div class="buttons">
