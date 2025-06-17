@@ -1,0 +1,56 @@
+
+body {
+  font-family: sans-serif;
+  background-color: #e7f3ee;
+  color: #003b29;
+  margin: 0;
+  padding: 1em;
+}
+
+h1 {
+  color: #008751;
+  text-align: center;
+}
+
+main {
+  background-color: white;
+  padding: 1em;
+  max-width: 700px;
+  margin: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input, select, textarea {
+  width: 100%;
+  margin: 0.3em 0 1em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+button {
+  background-color: #008751;
+  color: white;
+  border: none;
+  padding: 1em;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #006b41;
+}
