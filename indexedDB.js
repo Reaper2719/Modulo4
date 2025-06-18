@@ -21,6 +21,6 @@ function guardarRespuestas() {
       }
     }
   });
-  localStorage.setItem("respuestas_modulo1", JSON.stringify(respuestas));
+  localStorage.setItem("respuestas_modulo2", JSON.stringify(respuestas));
   alert("Respuestas guardadas localmente.");
 }

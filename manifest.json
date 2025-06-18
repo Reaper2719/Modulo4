@@ -1,6 +1,6 @@
 {
-  "name": "Encuesta Energética - Módulo 1",
-  "short_name": "Modulo1",
+  "name": "Encuesta Energética - Módulo 2",
+  "short_name": "Modulo2",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
