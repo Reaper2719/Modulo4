@@ -1,30 +1,38 @@
-
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form');
-  if (!form) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const datos = {};
-    const elementos = form.querySelectorAll('input, select, textarea');
-    elementos.forEach(el => {
-      if (el.type === 'radio' && el.checked) {
-        datos[el.name] = el.value;
-      } else if (el.type === 'checkbox') {
-        if (!datos[el.name]) datos[el.name] = [];
-        if (el.checked) datos[el.name].push(el.value);
-      } else if (el.type !== 'submit') {
-        datos[el.name] = el.value;
+function guardarRespuestas() {
+  const respuestas = {};
+  const inputs = document.querySelectorAll("input, textarea");
+  inputs.forEach(input => {
+    if (input.type === "radio" && input.checked) {
+      respuestas[input.name] = input.value;
+    } else if (input.type === "checkbox") {
+      if (!respuestas[input.name]) respuestas[input.name] = [];
+      if (input.checked) respuestas[input.name].push(input.value);
+    } else if (input.tagName === "TEXTAREA" || input.type === "text") {
+      if (input.value.trim() !== "") {
+        if (respuestas[input.name]) {
+          if (Array.isArray(respuestas[input.name])) {
+            respuestas[input.name].push(input.value);
+          } else {
+            respuestas[input.name] = [respuestas[input.name], input.value];
+          }
+        } else {
+          respuestas[input.name] = input.value;
+        }
       }
-    });
-
-    try {
-      await guardarRegistro(datos);
-      alert('✅ Registro guardado localmente');
-      form.reset();
-    } catch (err) {
-      console.error('Error al guardar:', err);
-      alert('❌ Error al guardar');
     }
   });
-});
+  localStorage.setItem("respuestas_modulo1", JSON.stringify(respuestas));
+  alert("Respuestas guardadas localmente.");
+}
+
+function exportarDatos() {
+  const data = localStorage.getItem("respuestas_modulo1");
+  if (!data) return alert("No hay datos guardados.");
+  const blob = new Blob([data], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "respuestas_modulo1.json";
+  a.click();
+  URL.revokeObjectURL(url);
+}
